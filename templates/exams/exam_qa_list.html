@@ -1,0 +1,42 @@
+{% extends "base/index.html" %}
+{% load humanize %}
+
+{% block content %}
+<h1 class="title-h text-center">Exam Questions List</h1>
+<div class="card">
+    <div class="card-header px-4">
+        <h4 class="float-start">Exam: <span class="text-capitalize">{{exam.name }}</span></h4>
+        <a class="btn btn-sm btn-primary btn-rounded float-end" href="{% url 'exams-questions-create' exam.slug %}">Add Question&nbsp;<i class="fa-solid fa-plus"></i></a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-default">
+                    <tr>
+                        <th>Question</th>
+                        <th>Option 1</th>
+                        <th>Option 2</th>
+                        <th>Option 3</th>
+                        <th>Option 4</th>
+                        <th>Answer</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in questions %}
+                    <tr>
+                        <td>{{i.question}}</td>
+                        <td>{{i.option1}}</td>
+                        <td>{{i.option2}}</td>
+                        <td>{{i.option3}}</td>
+                        <td>{{i.option4}}</td>
+                        <td>{{i.correct_option}}</td>
+                        <td>{{i.created_at|naturaltime}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

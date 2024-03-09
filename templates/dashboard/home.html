@@ -1,0 +1,109 @@
+{% extends "base/index.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center title-h">Dashboard</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            {% include 'dashboard/_partials/card.html' with title="Available Exams" count=all_exams color="default" icon="fa-print" %}
+        </div>
+        <div class="col-md-3">
+            {% include 'dashboard/_partials/card.html' with title="Attempted Exams" count=all_exams color="success" icon="fa-print" %}
+        </div>
+        <div class="col-md-3">
+            {% include 'dashboard/_partials/card.html' with title="Attempted Exams" count=all_exams color="success" icon="fa-print" %}
+        </div>
+        <div class="col-md-3">
+            {% include 'dashboard/_partials/card.html' with title="pending Exams" count=all_exams color="warning" icon="fa-print" %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col">
+                        <h4 class="float-start">Recent Exams</h4>
+                        <a href="{% url 'exams-all_list' %}" class="btn btn-primary btn-rounded btn-sm float-end">All Exams&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Exam Name</th>
+                                <th>Subject</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Exam 1</td>
+                                <td>Maths</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-01</td>
+                            </tr>
+                            <tr>
+                                <td>Exam 2</td>
+                                <td>Science</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-01</td>
+                            </tr>
+                            <tr>
+                                <td>Exam 3</td>
+                                <td>English</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col">
+                        <h4 class="float-start">Recent Exams</h4>
+                        <a href="{% url 'exams-all_list' %}" class="btn btn-primary btn-rounded btn-sm float-end">All Exams&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Exam Name</th>
+                                <th>Subject</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Exam 1</td>
+                                <td>Maths</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-01</td>
+                            </tr>
+                            <tr>
+                                <td>Exam 2</td>
+                                <td>Science</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-01</td>
+                            </tr>
+                            <tr>
+                                <td>Exam 3</td>
+                                <td>English</td>
+                                <td>2021-01-01</td>
+                                <td>2021-01-01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "base/index.html" %}
+{% load humanize %}
+
+{% block content %}
+<div class="col">
+    <h1 class="text-center title-h">Exams List</h1>
+</div>
+<div class="list-group">
+    {% for exam in exams %}
+    <a href="{% url 'exams-details' exam.slug %}" class="list-group-item list-group-item-action bg-primary-subtle" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1 text-capitalize">{{ exam.name }}</h5>
+            <small class="text-muted">{{ exam.created_at|naturaltime }}</small>
+        </div>
+        <div class="d-flex justify-content-between">
+            <p class="mb-1">{{ exam.description }}</p>
+            <a class="btn btn-sm btn-success mx-2" href="{% url 'exams-take-exam' exam.slug %}">Take Exam</a>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock content %}

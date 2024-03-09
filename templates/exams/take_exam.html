@@ -1,0 +1,37 @@
+{% extends "base/index.html" %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="card border-primary mx-4 my-4">
+                <div class="card-body text-default">
+                    <h4 class="card-title pb-0">Exam Details :</h4>
+                    <p class="card-text pt-0">
+                        </p><ul style="list-style:decimal;">
+                            <li>Course : {{course.name}}</li>
+                            <li>Total Question : {{total_questions}}</li>
+                            <li>Total Marks : {{total_marks}}</li>
+                        </ul>
+                    <p></p>
+                    <h4 class="card-title pb-0">Rules :</h4>
+                    <p class="card-text pt-0">
+                        </p><ul style="list-style: decimal;">
+                            <li>All questions are MCQ (multiple-choice questions).</li>
+                            <li><span class="text-danger">Only one choice is correct among the given options.</span></li>
+                            <li>Every question carries different marks.</li>
+                            <li>Try to answer as soon as possible.</li>
+                            <li>If you refresh the page or go back to the previous page, a new question will be presented, and the question you were on will be counted as an attempt.</li>
+                            <li>Questions are presented randomly.</li>
+                        </ul>
+                        
+                    <p></p>
+                    <a href="{% url 'exams-start-exam' course.slug %}" class="btn btn-primary btn-lg" style="border-radius:0px;">Enter Examination</a>
+                </div>  
+                <div class="card-footer">Best Of Luck, Students!</div>  
+            </div>  
+        </div>  
+
+    </div>
+</div>
+{% endblock content %}

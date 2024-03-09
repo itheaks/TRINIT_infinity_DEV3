@@ -1,0 +1,27 @@
+{% load static %}
+<header id="header" class="header fixed-top bg-">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img class="mx-0" src="{% static 'icons/favicon.png' %}" alt="logo"/>
+        <span class="mx-2">{{site_name}}</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="nav-link"><a href="{% url 'exam-view-result' %}"><span>Results</span></a></li>
+          <li class="nav-link"><a href=""><span>Events</span></a></li>
+
+          <li><a class="nav-link" href="{% url 'utils-contact-us' %}">Contact</a></li>
+          {% if request.user.is_authenticated %}
+            {% include 'base/_details/profile_on_login.html' %}
+          {% else %}
+            <li><a href="{% url 'accounts-login' %}" class="header_lr_btn_login btn btn-outline-light">Login</a></li>
+            <li><a href="{% url 'accounts-register' %}" class="header_lr_btn_reg btn btn-light text-default">SignUp</a></li>
+            {% endif %}
+        </ul>
+        
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
